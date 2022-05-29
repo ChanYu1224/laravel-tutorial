@@ -25,10 +25,10 @@ class HelloController extends Controller
         EOF;
     }
 
-    public function index($id='unknown'){
+    public function index(Request $request){
         $data = [
             'msg'=>'これはコントローラから渡されたメッセージです。',
-            'id'=>$id,
+            'id'=>$request->id,
         ];
         return view('hello.index', $data);
     }
