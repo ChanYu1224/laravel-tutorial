@@ -25,8 +25,11 @@ class HelloController extends Controller
         EOF;
     }
 
-    public function index(){
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。'];
+    public function index($id='unknown'){
+        $data = [
+            'msg'=>'これはコントローラから渡されたメッセージです。',
+            'id'=>$id,
+        ];
         return view('hello.index', $data);
     }
 }
