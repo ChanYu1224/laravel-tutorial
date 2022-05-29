@@ -32,4 +32,12 @@ class HelloController extends Controller
         ];
         return view('hello.index', $data);
     }
+
+    public function post(Request $request){
+        $msg = $request->msg;
+        $data = [
+            'msg'=>'こんにちは、'.$msg.'さん！'
+        ];
+        return view('hello.index', $data);
+    }
 }

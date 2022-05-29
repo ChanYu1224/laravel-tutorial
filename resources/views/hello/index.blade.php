@@ -9,6 +9,10 @@
 <body>
     <h1>Index</h1>
     <p>{{$msg}}</p>
-    <p>ID={{$id}}</p>
+    <form action="/hello" method="POST">
+        @csrf
+        <input type="text" name="msg">
+        <input type="submit">
+    </form>
 </body>
 </html>
