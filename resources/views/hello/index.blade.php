@@ -9,9 +9,15 @@
 <body>
     <h1>Blade/Index</h1>
     <ol>
-    @foreach($data as $item)
-        <li>{{$item}}
-    @endforeach
+    @for ($i = 1; $i < 100; $i++)
+        @if($i % 2 == 0)
+            @continue
+        @elseif($i <= 10)
+            <li>No. {{$i}}
+        @else
+            @break
+        @endif
+    @endfor
     </ol>
 </body>
 </html>
