@@ -8,14 +8,16 @@
 </head>
 <body>
     <h1>Blade/Index</h1>
-    @foreach ($data as $item)
-        @if($loop->first)
-            <p>※データ一覧</p><ul>
-        @endif
-        <li>No{{$loop->iteration}}. {{$item}}</li>
-        @if($loop->last)
-            </ul><p>----ここまで</p>
-        @endif
-    @endforeach
+    @php
+        $counter = 0;
+    @endphp
+    <ol>
+    @while ($counter < count($data))
+        <li>{{$data[$counter]}}</li>
+        @php
+            $counter++;
+        @endphp
+    @endwhile
+    </ol>
 </body>
 </html>
