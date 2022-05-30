@@ -36,7 +36,7 @@ class HelloController extends Controller
     public function post(Request $request){
         $msg = $request->msg;
         $data = [
-            'msg'=>'こんにちは、'.$msg.'さん！'
+            'msg'=>$msg
         ];
         return view('hello.index', $data);
     }
