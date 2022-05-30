@@ -11,10 +11,7 @@
     <p>ここが本文のコンテンツです．</p>
     <p>必要なだけ記述出来ます．</p>
 
-    @include('components.message',[
-        'message_title'=>'OK',
-        'message_content'=>'サブビューです．'
-    ])
+    @each('components.item', $data, 'item')
 @endsection
 
 @section('footer')
